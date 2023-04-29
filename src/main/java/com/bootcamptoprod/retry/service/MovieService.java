@@ -40,9 +40,9 @@ public class MovieService {
     }
 
     @Recover
-    public Movie recoverMovieDetails(RestClientException e) {
+    public Movie recoverMovieDetails(RestClientException e, String movieId) {
         // Log the error
-        System.out.println("Error fetching movie details: " + e.getMessage());
+        System.out.println("Error fetching movie details for movie id: " + movieId + ". Error Message: " + e.getMessage());
 
         // Return a default movie
         return new Movie("0000", "Default movie", "Unknown", 0.0);
